@@ -4,17 +4,19 @@ import React, {useEffect} from 'react';
 // const {kakao} = window;
 const Map = () => {
 	useEffect(() => {
+		let axisX = '127.01417875697042';
+		let axisY = '37.48581618312246';
 		let container = document.getElementById('map');
 
 		let options = {
-			center: new window.kakao.maps.LatLng(37.365264512305174, 127.10676860117488)
-			,level: 3
+			center: new kakao.maps.LatLng(axisY, axisX)
+			,level: 2
 		};
 
 		let map = new kakao.maps.Map(container, options);
-		let position = new kakao.maps.LatLng(37.365264512305174, 127.10676860117488);
+		let loc = new kakao.maps.LatLng(axisY, axisX);
 		let marker = new kakao.maps.Marker({
-			position: position
+			position: loc
 		});
 		marker.setMap(map);
 
