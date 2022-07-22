@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navigate from './navigate/Navigate';
+import Count from './count/index';
+import Test from './Test';
+import IO from './io/index';
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+
+			<Router>
+				<Navigate/>
+
+				<Routes>
+					<Route path='/count' element={<Count/>}/>
+					<Route path='/test' element={<Test/>}/>
+					<Route path='/io' element={<IO/>}/>
+				</Routes>
+			</Router>
+		</div>
+	);
 }
 
-export default App;
+export default App;	// 다른 js파일에서 불러올 수 있도록
