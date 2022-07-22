@@ -3,6 +3,7 @@ import Navigate from './navigate/Navigate';
 import Count from './count/index';
 import Test from './Test';
 import IO from './io/index';
+import Map from './map/index';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 					<Route path='/count' element={<Count/>}/>
 					<Route path='/test' element={<Test/>}/>
 					<Route path='/io' element={<IO/>}/>
+					<Route path='/map' element={<Map/>}/>
 				</Routes>
 			</Router>
 		</div>
