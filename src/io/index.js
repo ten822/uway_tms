@@ -1,22 +1,38 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 
 const IO = () => {
-	const [data, setData] = useState();
+	const [photos, setPhotos] = useState([]);
+	let test_url = "https://jsonplaceholder.typicode.com/photos";
 
-	axios.get('https://ta.uwayapply.com')
+	axios.get(test_url)
 	.then(function(res) {
+		setPhotos(res.data);
 		console.log('success');
 	})
 	.catch(function(error) {
 		console.log('fail');
 	});
 
-	return (
-		<div>
-			{data && <textarea rows={7} value={JSON.stringify(data,null,2)}/>}
-		</div>
-	);
+	if(photos.length > 0) {
+		return (
+			photos.map(photo => (
+				(photo.id < 10) ? (
+					<div key={photo.id}>
+						<p>title: {photo.title}</p>
+						<img src={photo.thumbnailUrl} alt='img'/>
+					</div>
+				) : null
+			))
+		);
+	}
+	else {
+		return (
+			<div>
+				<button onClick={IO}>???</button>
+			</div>
+		);
+	}
 };
 
 export default IO;
