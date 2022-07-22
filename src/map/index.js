@@ -1,6 +1,7 @@
 /* global kakao */
 import React, {useEffect} from 'react';
 
+// const {kakao} = window;
 const Map = () => {
 	useEffect(() => {
 		let container = document.getElementById('map');
