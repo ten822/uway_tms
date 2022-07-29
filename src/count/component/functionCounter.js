@@ -1,15 +1,18 @@
 import React, {useState} from 'react';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-function Mpp(props) {
+function FunctionCounter(props) {
 	const [counter, setCounter] = useState(0);
 
 	return (
-		<div>
+		<Stack spacing={2} direction="row">
 			<h3>fnc: {counter}</h3>
-			<button onClick={()=> {setCounter(counter + 1); props.addNum();}}> Increase</button>
-			<button onClick={()=> {setCounter(counter - 1); props.subNum();}}> Decrease</button>
-		</div>
+			<Button variant="contained"onClick={()=> {setCounter(counter + 1); props.addNum();}} startIcon={<DeleteIcon />}>inc</Button>
+			<Button variant="contained"onClick={()=> {setCounter(counter - 1); props.subNum();}}>dec</Button>
+		</Stack>
 	);
 }
 
-export default Mpp;
+export default FunctionCounter;

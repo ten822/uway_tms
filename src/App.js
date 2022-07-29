@@ -14,7 +14,8 @@ function App() {
 				<Navigate/>
 
 				<Routes>
-					<Route path='/count' element={<Count/>}/>
+					<Route path='/*' element={<div>hello~</div>}/>
+					<Route path='/count/*' element={<Count/>}/>
 					<Route path='/test' element={<Test/>}/>
 					<Route path='/io' element={<IO/>}/>
 					<Route path='/map' element={<Map/>}/>
